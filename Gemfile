@@ -3,8 +3,8 @@ ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgres as the database for Active Record
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -20,28 +20,43 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :doc do
+  gem 'sdoc', '~> 0.4.0', require: false
+end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
+# ADD THESE GROUPS:
 group :development, :test do
-  gem 'spring-commands-rspec'
   gem 'rspec-rails'
+  # gem 'debugger' # Use debugger
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  # OPTIONAL FOR THIS GROUP:
+  # gem 'jasmine' # framework for testing javascript
+  # gem 'jasmine-jquery-rails' # framework for testing javascript
+  # gem 'better_errors' # nice output of rails errors in browser
+  # gem 'binding_of_caller' #online console and debugging in browser
+  gem 'spring-commands-rspec'
   gem 'guard-rspec'
   gem 'rb-fsevent' if `uname` =~ /Darwin/
 end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
+# OPTIONAL FOR THIS GROUP
+  # gem 'capybara-webkit' # Headless driver for capybara
+  # gem 'selenium-webdriver' # Headful driver for capybara
+  # gem 'poltergeist', '1.5.0' # yet another headless driver for capybara
+  # gem 'webrat' # Another Headless driver for capybara
+end
+
+group :production do
+  gem 'rails_12factor'
+  # gem 'unicorn' #IF you use unicorn as an app server
+end
+
 
