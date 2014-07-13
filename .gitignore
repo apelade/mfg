@@ -13,6 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+/log
 /tmp
 
 # scm revert files
@@ -65,3 +66,4 @@ pickle-email-*.html
 # Versioning
 .rvmrc
 .ruby-gemset
+
