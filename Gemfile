@@ -28,7 +28,7 @@ end
 # ADD THESE GROUPS:
 group :development, :test do
   gem 'rspec-rails'
-  # gem 'debugger' # Use debugger
+  gem 'byebug' # The new debugger for ruby 2.x
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   # OPTIONAL FOR THIS GROUP:
