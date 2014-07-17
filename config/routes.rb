@@ -2,10 +2,11 @@ Rails.application.routes.draw do
 
 
 
+  get 'home/index'
+
   devise_for :users
 
-  # for Devise good idea anyway
-  root to: "home#index"
+
 
   resources :invoices
 
@@ -20,7 +21,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  #root 'welcome#index'
+
+
+  # for Devise needed anyway
+  # requires Home controller with index method like rails g controller Home index
+  root to: "home#index"
+  #root "home#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
