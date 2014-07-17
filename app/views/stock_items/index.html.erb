@@ -1,0 +1,31 @@
+<h1>Listing stock_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Model</th>
+      <th>Description</th>
+      <th>Legal in all states</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stock_items.each do |stock_item| %>
+      <tr>
+        <td><%= stock_item.name %></td>
+        <td><%= stock_item.model %></td>
+        <td><%= stock_item.description %></td>
+        <td><%= stock_item.legal_in_all_states %></td>
+        <td><%= link_to 'Show', stock_item %></td>
+        <td><%= link_to 'Edit', edit_stock_item_path(stock_item) %></td>
+        <td><%= link_to 'Destroy', stock_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stock item', new_stock_item_path %>
