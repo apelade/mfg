@@ -7,4 +7,5 @@ before_install:
   - gem update --system
 
 script:
+  - bin/rake db:create db:migrate
   - bundle exec rspec spec
