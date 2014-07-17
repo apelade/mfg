@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - "2.1.2"
+
+before_install:
+# rubygems 2.3.2 is latest as of July 16, 2014
+  - gem update --system
+
+script:
+  - bundle exec rspec spec
