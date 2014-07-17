@@ -9,4 +9,4 @@ before_install:
 
 script:
   - bin/rake db:create db:migrate
-  - bundle exec rake rspec
+  - bundle exec rspec spec
