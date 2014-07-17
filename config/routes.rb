@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+
+
+  devise_for :users
+
+  # for Devise good idea anyway
+  root to: "home#index"
+
   resources :invoices
 
   resources :orders
@@ -6,6 +14,7 @@ Rails.application.routes.draw do
   resources :stock_items
 
   resources :customers
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
