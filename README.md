@@ -4,7 +4,7 @@
 
 ### Re-engineer an existing FoxPro manufacturing application    ###
 ### This project is on indefinite hold. ###
-### I think he said they may try quickbooks ###
+### They said they may try quickbooks ###
 
 ============================
 
